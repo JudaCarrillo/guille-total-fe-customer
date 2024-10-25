@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgIf } from '@angular/common';
-
+import { SigninData } from '../../../interfaces/signin.interface';
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
@@ -11,7 +11,7 @@ import { NgIf } from '@angular/common';
 })
 export class SigninComponent {
   signinForm: FormGroup;
-  fakeUser = {
+  fakeUser: SigninData = {
     email: 'user@example.com',
     password: '123456'
   };

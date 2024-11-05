@@ -1,0 +1,45 @@
+.about-container {
+  position: relative;
+  height: 78vh;
+  color: #ffffff;
+  overflow: hidden;
+  align-content: center;
+
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    object-fit: cover;
+    opacity: 0.3; // Ajusta la opacidad de la imagen para que el texto sea legible
+    z-index: 1;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2; // Para asegurar que el texto esté encima de la imagen de fondo
+    padding: 20px;
+    width: 80vw;
+    height: 90%;
+    margin: auto;
+    background-color: transparent; // Fondo oscuro semi-transparente detrás del texto
+    align-content: center;
+  }
+
+  .title {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+
+  .description, .team {
+    font-size: 40px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .separator {
+    height: 2px;
+    background-color: #ffffff;
+    margin-top: 20px;
+  }
+}

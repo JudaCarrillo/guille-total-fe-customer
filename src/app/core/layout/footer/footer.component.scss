@@ -1,0 +1,26 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  background-color: #1a1a1a;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+
+  p {
+    margin: 0;
+    letter-spacing: 10px;
+    text-align: center;
+    padding-top: 10px;
+  }
+}
+.footer-line {
+  margin: 0 auto;
+  width: 80%;
+  height: 2px;
+  background-color: white;
+}
+

@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  background-image: url('../../../../assets/Navbar.png'); // Reemplaza con la ruta de tu imagen de fondo
+  background-size: cover; // Asegura que la imagen cubra todo el fondo
+  background-position: center; // Centra la imagen en el fondo
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  font-family: Arial, sans-serif;
+  height: 100px;
+
+  .container-navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 20%;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 170px;
+      padding-top: 20px;
+    }
+  }
+
+  .menu {
+    display: flex;
+    gap: 20px;
+    font-weight: bold;
+
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: 25px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .auth {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: 25px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/* Estilos responsivos */
+@media (max-width: 1080px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+    text-align: center;
+    height: 100px;
+
+    .container-navbar-logo {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo {
+      img {
+        display: none;
+        width: 120px; // Reduce el tamaño del logo en pantallas pequeñas
+        padding-top: 10px;
+      }
+    }
+
+    .menu {
+      gap: 10px;
+      margin-top: 10px;
+
+      a {
+        font-size: 20px; // Reduce el tamaño de fuente del menú
+      }
+    }
+
+    .auth {
+      margin-top: 10px;
+
+      a {
+        font-size: 20px; // Reduce el tamaño de fuente del enlace de autenticación
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    height: auto;
+    .menu {
+      flex-direction: column; // Cambia el menú a una columna en pantallas muy pequeñas
+      gap: 5px;
+      letter-spacing: 2px;
+    }
+
+    .auth {
+      a {
+        font-size: 18px; // Ajusta el tamaño de fuente en pantallas más pequeñas
+      }
+    }
+  }
+}

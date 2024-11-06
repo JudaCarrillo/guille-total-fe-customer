@@ -11,22 +11,28 @@ import { HomeComponent } from './modules/guilletotal/home/pages/home/home.compon
 import { AboutComponent } from './modules/guilletotal/about/pages/about/about.component';
 import { FooterComponent } from './core/layout/footer/footer.component';
 import { DropShadowComponent } from './core/layout/drop-shadow/drop-shadow.component';
+import { SubscriptionComponent } from './modules/Payment/subscription/subscription.component';
+import { PaymentGatewayComponent } from './modules/Payment/payment-gateway/payment-gateway.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignupComponent,
     NavbarComponent,
     HomeComponent,
     AboutComponent,
     FooterComponent,
     DropShadowComponent,
+    SubscriptionComponent,
+    PaymentGatewayComponent,
+
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
-  ],
+    SigninComponent,
+    SignupComponent,
+],
   providers: [
     provideAnimationsAsync()
   ],

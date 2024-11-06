@@ -8,6 +8,7 @@
     </div>
     <div class="signup-form-container">
       <div class="signup-form">
+        <span (click)="cerrar()">X</span>
         <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
           <div class="row-form-group">
             <div class="form-group">
@@ -38,12 +39,7 @@
             </div>
 
             <div class="form-group">
-              <label for="username">Nombre de Usuario:</label>
-              <input id="username" formControlName="username" />
-              <div *ngIf="signupForm.get('username')?.invalid && (signupForm.get('username')?.touched || signupForm.get('username')?.dirty)" class="error">
-                <small *ngIf="signupForm.get('username')?.errors?.['required']">El nombre de usuario es obligatorio.</small>
-                <small *ngIf="signupForm.get('username')?.errors?.['minlength']">El nombre de usuario debe tener al menos 3 caracteres.</small>
-              </div>
+
             </div>
           </div>
           <div class="form-group">

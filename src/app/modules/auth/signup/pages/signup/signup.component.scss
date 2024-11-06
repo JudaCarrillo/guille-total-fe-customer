@@ -10,11 +10,13 @@ $link-color: #1a904d;
 
 // Estilo del contenedor principal
 .signup-container-wrapper {
-  background-color: $background-color;
-  height: 100vh;
+  height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  width: 100vw;
+  z-index: 9999;
 }
 
 .signup-container {
@@ -52,6 +54,14 @@ $link-color: #1a904d;
     .signup-form {
       width: 100%;
       max-width: 420px;
+      span {
+        display: flex;
+        color: $primary-color;
+        font-weight: bold;
+        font-size: 2rem;
+        cursor: pointer;
+        justify-content: flex-end;
+      }
       form{
         display: flex;
         flex-direction: column;
@@ -148,6 +158,46 @@ $link-color: #1a904d;
           cursor: not-allowed;
         }
       }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .signup-container {
+    flex-direction: column; // Cambiar a columna en pantallas pequeñas
+    background-color: transparent;
+
+    .signup-image {
+      display: none; // Ocultar la imagen
+    }
+
+    .signup-form-container {
+      width: 80%;
+      height: auto;
+      margin: 0 auto;
+      padding: 1rem; // Añadir un padding para mejorar el espacio interior
+    }
+
+    .form-group {
+      width: 100%;
+      margin-bottom: 1rem; // Espacio entre grupos de formulario
+
+      input {
+        width: 100%; // Asegura que el input ocupe el ancho completo
+      }
+    }
+
+    input {
+      width: 100%; // Ancho completo en inputs
+    }
+
+    // Cambiar tamaño de fuente para pantallas pequeñas
+    span {
+      font-size: 1.5rem; // Ajuste del tamaño del texto
+    }
+
+    button {
+      width: 100%; // Botón ocupa el ancho completo en móviles
+      padding: 0.75rem; // Espaciado adicional para el botón
     }
   }
 }

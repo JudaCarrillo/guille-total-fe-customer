@@ -13,7 +13,7 @@
   .modal-content {
     display: none;
     position: absolute;
-    top: 30px; // Ajusta según necesites
+    top: 30px;
     left: 0;
     width: 450px;
     padding: 20px;
@@ -29,6 +29,15 @@
 
     .option {
       margin-bottom: 20px;
+      transition: background-color 0.3s ease;
+      padding: 7px;
+      border-radius: 2rem;
+
+      &:hover {
+        background-color: #444;
+        cursor: pointer;
+        border-radius: 2rem;
+}
 
       div {
         display: flex;
@@ -53,12 +62,13 @@
         background-color: #666;
         color: #fff;
         border: none;
-        padding: 8px 16px;
-        border-radius: 20px;
+        padding: 8px;
+        border-radius: 1rem;
         cursor: pointer;
-
         &:hover {
           background-color: #888;
+          border: 2px solid #fff;
+          cursor: pointer;
         }
       }
     }

@@ -1,0 +1,101 @@
+.modal-container {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  max-width: 450px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+
+  .background-image {
+    position: absolute;
+    top: 85px;
+    left: 56px;
+    width: 78%;
+    height: 90%;
+    background-image: url('../../../../assets/padula.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4;
+    z-index: 1;
+  }
+  .modal-content {
+    padding: 0px 20px 20px 20px;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .modal-title {
+    background-color: #006400;
+    padding: 10px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .plan-info {
+    .plan-price {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    h3 {
+      font-size: 24px;
+      margin: 10px 0;
+      color: white;
+    }
+
+    .price {
+      font-size: 32px;
+      font-weight: bold;
+      color: #fff;
+
+      span {
+        font-size: 16px;
+      }
+    }
+
+    p {
+      margin: 10px 0;
+      color: #ccc;
+    }
+  }
+
+  .benefits {
+    text-align: left;
+    margin: 20px 0px 20px -95px;
+    font-size: 14px;
+    color: #ccc;
+
+    li {
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      &:before {
+        content: '✔️';
+        margin-right: 5px;
+        color: #28a745;
+      }
+    }
+  }
+
+  .subscribe-button {
+    background-color: #1A904D;
+    color: white;
+    font-weight: bold;
+    padding: 8px 20px;
+    margin-top: 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 8px;
+    &:hover {
+      background-color: #218838;
+    }
+  }
+}

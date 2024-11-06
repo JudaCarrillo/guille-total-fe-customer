@@ -10,16 +10,18 @@ $link-color: #1A904D;
 
 // Estilo del contenedor principal
 .signin-container-wrapper {
-  background-color: $background-color;
-  height: 100vh;
+  height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  width: 100vw;
+  z-index: 9999;
 }
 
 .signin-container {
   display: flex;
-  flex-direction: row; // Imagen a la izquierda, formulario a la derecha
+  flex-direction: row;
   align-items: stretch;
   width: 100%;
   max-width: 1064px;
@@ -50,6 +52,7 @@ $link-color: #1A904D;
     background: $form-background;
     box-shadow: 0px 4px 10px $box-shadow-color;
 
+
     // Contenedor del enlace "Recuperar contraseña"
     .recover-password-container {
       width: 100%;
@@ -79,6 +82,16 @@ $link-color: #1A904D;
         &:hover {
           color: darken($link-color, 10%);
         }
+      }
+
+      span {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        color: $black-color;
+        font-size: 16px;
+        font-weight: bold;
+        margin-right: 10px;
       }
     }
 
@@ -144,6 +157,22 @@ $link-color: #1A904D;
           cursor: not-allowed;
         }
       }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .signin-container {
+    flex-direction: column; // Cambiar a columna en pantallas pequeñas
+    background-color: transparent;
+
+    .signin-image {
+      display: none; // Ocultar la imagen
+    }
+
+    .signin-background {
+      width: 80%;
+      height: auto;
+      margin: 0 auto;
     }
   }
 }

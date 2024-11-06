@@ -1,6 +1,7 @@
 .about-container {
   position: relative;
-  height: 78vh;
+  height: auto;
+  margin-top: 60px;
   color: #ffffff;
   overflow: hidden;
   align-content: center;
@@ -32,7 +33,7 @@
   }
 
   .description, .team {
-    font-size: 40px;
+    font-size: 34px;
     line-height: 1.5;
     margin-bottom: 20px;
   }

@@ -1,1 +1,57 @@
-<p>payment-gateway works!</p>
+<div class="subscription-container">
+  <h2>Procesadores de pago</h2>
+  <div class="background-image"></div>
+  <div class="payment-container">
+    <div class="payment-methods">
+      <label>
+        <input
+          type="radio"
+          name="payment"
+          value="paypal"
+          [(ngModel)]="selectedMethod"
+        />
+        <img src="../../../../assets/paypal.png" alt="PayPal" />
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="payment"
+          value="izipay"
+          [(ngModel)]="selectedMethod"
+        />
+        <img src="../../../../assets/izipay.png" alt="Izipay" />
+      </label>
+    </div>
+
+    <div class="purchase-summary">
+      <h3>Detalle de Compra</h3>
+      <div class="price-info">
+        <p>Suscríbete a GuilleTotal</p>
+        <span>
+          PEN 3.00
+          <div class="separador">
+            <p>por</p>
+            <p>mes</p>
+          </div>
+        </span>
+      </div>
+      <div class="divider"></div>
+      <div class="price-detail">
+        <span>Subtotal</span>
+        <span>PEN 3.00</span>
+      </div>
+      <div class="price-detail">
+        <span>Impuestos</span>
+        <span>PEN 0.00</span>
+      </div>
+      <div class="divider"></div>
+      <div class="price-total">
+        <span>Total:</span>
+        <span>PEN 3.00</span>
+      </div>
+      <button mat-button color="primary" (click)="continuePurchase()">
+        CONTINUAR
+      </button>
+    </div>
+  </div>
+</div>

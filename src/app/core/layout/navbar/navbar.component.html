@@ -20,7 +20,9 @@
         {{ userName }} ▼
       </button>
       <div class="dropdown-content" *ngIf="dropdownOpen">
-        <a (click)="logout()">Cerrar Sesión <img src="../../../../assets/salir.png" alt="Logout" /> </a>
+        <a (click)="logout()"
+          >Cerrar Sesión <img src="../../../../assets/salir.png" alt="Logout" />
+        </a>
       </div>
     </div>
   </div>
@@ -47,13 +49,18 @@
     <a routerLink="/about" (click)="closeMenu()">NOSOTROS</a>
 
     <div class="auth">
-      <a *ngIf="!userName" (click)="openSigninModal(); closeMenu()">Ingresar / Registrarse</a>
+      <a *ngIf="!userName" (click)="openSigninModal(); closeMenu()"
+        >Ingresar / Registrarse</a
+      >
       <div class="dropdown" *ngIf="userName" (clickOutside)="closeDropdown()">
         <button class="dropbtn" (click)="toggleDropdown()">
           {{ userName }} ▼
         </button>
         <div class="dropdown-content" *ngIf="dropdownOpen">
-          <a (click)="logout(); closeMenu()">Cerrar Sesión <img src="../../../../assets/salir.png" alt="Logout" /> </a>
+          <a (click)="logout(); closeMenu()"
+            >Cerrar Sesión
+            <img src="../../../../assets/salir.png" alt="Logout" />
+          </a>
         </div>
       </div>
     </div>
@@ -67,8 +74,8 @@
   <div class="modal-content">
     <app-signin
       [cerrar]="closeSigninModal.bind(this)"
-      (login)="onLogin($event)"
-      (openSignupModal)="openSignupModal()">
+      (openSignupModal)="openSignupModal()"
+    >
     </app-signin>
   </div>
 </div>

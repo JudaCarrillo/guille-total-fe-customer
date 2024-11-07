@@ -1,42 +1,28 @@
 import { Injectable } from '@angular/core';
+import HttpService from '../../../common/services/http/http.service';
+import { User } from '../../../core/interfaces/user.interface';
+import { SigninData } from '../signin/interfaces/signin.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private readonly AUTH_KEY = 'isAuthenticated'; // Clave de localStorage para la autenticación
-  private readonly USERNAME_KEY = 'userName'; // Clave de localStorage para el nombre de usuario
-
-  constructor() {
-    // Al iniciar, verificamos si hay un estado de autenticación en localStorage
-    const storedAuthStatus = localStorage.getItem(this.AUTH_KEY);
-    this.isAuthenticated = storedAuthStatus === 'true'; // Convertimos a booleano
-  }
-
-  private isAuthenticated: boolean = false;
+  constructor(
+    private httpService: HttpService,
+  ) {}
 
   // Iniciar sesión
-  login(username: string) {
-    this.isAuthenticated = true;
-    localStorage.setItem(this.AUTH_KEY, 'true'); // Guardamos el estado en localStorage
-    localStorage.setItem(this.USERNAME_KEY, username); // Guardamos el nombre de usuario
+  login(body: SigninData) {
+    return this.httpService.post('/login', body, [], 'GUILLE_TOTAL_DEFAULT_API', false);
   }
 
   // Cerrar sesión
   logout() {
-    this.isAuthenticated = false;
-    localStorage.setItem(this.AUTH_KEY, 'false'); // Borramos el estado en localStorage
-    localStorage.removeItem(this.USERNAME_KEY); // Eliminamos el nombre de usuario
+    return this.httpService.post('/Auth/logout', {}, [], 'GUILLE_TOTAL_DEFAULT_API', true);
   }
 
-  // Obtener el nombre de usuario almacenado
-  getUsername(): string | null {
-    return localStorage.getItem(this.USERNAME_KEY);
-  }
-
-  // Comprobar si está autenticado
-  isLoggedIn(): boolean {
-    return this.isAuthenticated;
+  signup(body: User) {
+    return this.httpService.post('/register', body, [], 'GUILLE_TOTAL_DEFAULT_API', false);
   }
 }

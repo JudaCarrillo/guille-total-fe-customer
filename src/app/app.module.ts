@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { SigninComponent } from './modules/auth/signin/pages/signin/signin/signin.component';
+import { SigninComponent } from './modules/auth/signin/pages/signin/signin.component';
 import { SignupComponent } from './modules/auth/signup/pages/signup/signup.component';
 import { NavbarComponent } from './core/layout/navbar/navbar.component';
 import { HomeComponent } from './modules/guilletotal/home/pages/home/home.component';
@@ -23,6 +23,7 @@ import { DetailPredictionComponent } from './modules/guilletotal/predictions/pag
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { AnalysisComponent } from './modules/guilletotal/predictions/components/analysis/analysis.component';
 import { UpcomingMatchesngComponent } from './modules/guilletotal/predictions/components/upcoming-matchesng/upcoming-matchesng.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { UpcomingMatchesngComponent } from './modules/guilletotal/predictions/co
     SigninComponent,
     SignupComponent,
     BrowserAnimationsModule,
+    HttpClientModule,
     ToastrModule.forRoot({
       timeOut: 3000,
       positionClass: 'toast-top-right',

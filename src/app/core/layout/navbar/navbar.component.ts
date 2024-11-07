@@ -2,24 +2,38 @@ import { Component, OnInit } from '@angular/core';
 import { debounceTime } from 'rxjs/operators';
 import { fromEvent } from 'rxjs';
 import { AuthService } from '../../../modules/auth/services/auth.service'; // Importar el servicio AuthService
+import { SessionService } from '../../../common/services/session/session.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  userName: string | null = null;
+  userName?: string;
   showSigninModal = false;
   showSignupModal = false;
   dropdownOpen = false;
   menuOpen = false;
   isMobile = window.innerWidth <= 1080;
 
-  constructor(private authService: AuthService) { }
+  constructor(
+    private authService: AuthService,
+    private sessionService: SessionService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit() {
-    this.userName = this.authService.getUsername(); // Obtener el nombre de usuario desde el servicio
+    this.sessionService.loggedIn$.subscribe((loggedIn) => {
+      if (!loggedIn) {
+        this.userName = '';
+      }
+
+      const sessionData: any = this.sessionService.getSession();
+      this.userName = sessionData ? sessionData.user?.name : '';
+    });
+
     fromEvent(window, 'resize')
       .pipe(debounceTime(100))
       .subscribe(() => this.checkMobileView());
@@ -66,17 +80,21 @@ export class NavbarComponent implements OnInit {
 
   // Método para cerrar sesión usando AuthService
   logout() {
-    this.authService.logout();
-    this.userName = null;
-    this.closeDropdown();
-    window.location.reload();
-  }
+    this.authService.logout().subscribe({
+      next: (res) => {
+        if (!res.success) {
+          this.toastr.error(res.message, 'Error');
+        }
 
-  // Método que se llama cuando el usuario se loguea correctamente
-  onLogin(userName: string) {
-    this.userName = userName;
-    this.closeSigninModal();
+        this.sessionService.logout();
+        this.toastr.success('Sesión cerrada', 'Éxito');
+      },
+      error: () => {
+        this.toastr.error('Error al cerrar sesión', 'Error');
+      },
+    });
+
+    this.userName = '';
     this.closeDropdown();
-    window.location.reload();
   }
 }

@@ -17,10 +17,10 @@
     <a *ngIf="!userName" (click)="openSigninModal()">Ingresar / Registrarse</a>
     <div class="dropdown" *ngIf="userName" (clickOutside)="closeDropdown()">
       <button class="dropbtn" (click)="toggleDropdown()">
-        {{ userName }}
+        {{ userName }} ▼
       </button>
       <div class="dropdown-content" *ngIf="dropdownOpen">
-        <a (click)="logout()">Cerrar Sesión</a>
+        <a (click)="logout()">Cerrar Sesión <img src="../../../../assets/salir.png" alt="Logout" /> </a>
       </div>
     </div>
   </div>
@@ -50,10 +50,10 @@
       <a *ngIf="!userName" (click)="openSigninModal(); closeMenu()">Ingresar / Registrarse</a>
       <div class="dropdown" *ngIf="userName" (clickOutside)="closeDropdown()">
         <button class="dropbtn" (click)="toggleDropdown()">
-          {{ userName }}
+          {{ userName }} ▼
         </button>
         <div class="dropdown-content" *ngIf="dropdownOpen">
-          <a (click)="logout(); closeMenu()">Cerrar Sesión</a>
+          <a (click)="logout(); closeMenu()">Cerrar Sesión <img src="../../../../assets/salir.png" alt="Logout" /> </a>
         </div>
       </div>
     </div>

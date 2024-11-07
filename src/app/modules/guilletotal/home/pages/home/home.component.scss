@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 .home-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
-  background-color: #1a1a1a;
+  background-color: #2C2C2C;
   height: 81vh;
   margin-left: 50px;
   margin-right: 50px;
@@ -13,25 +16,29 @@
     max-width: 50%;
 
     h1 {
-      font-size: 4.5rem;
+      font-size: 6vw; /* Tamaño de fuente en función del ancho de la ventana */
       font-weight: bold;
-      margin-bottom: 1rem;
-      letter-spacing: 20px;
+      font-family: "Anton", sans-serif;
+      margin-bottom: 2rem;
+      letter-spacing: 20px; /* Ajuste de espaciado en función del ancho */
     }
 
     p {
-      font-size: 1.60rem;
+      font-size:23px;
+      font-family: "Inter", sans-serif;
       line-height: 1.5;
+      letter-spacing: 3px;
       margin-bottom: 2rem;
     }
 
     .subscribe-button {
-      background-color: #28a745;
+      background-image: url('../../../../../../assets/Navbar.png');
       color: #ffffff;
       padding: 0.75rem 2rem;
       font-size: 2rem;
       font-weight: bold;
       border: none;
+      opacity: 0.8;
       letter-spacing: 3px;
       cursor: pointer;
       transition: background-color 0.3s;
@@ -79,32 +86,32 @@
 // Media queries para hacer la página responsive
 @media (max-width: 1024px) {
   .home-container {
-    flex-direction: column; // Cambiar a columna en pantallas más pequeñas
-    align-items: flex-start; // Alinear al inicio
+    flex-direction: column;
+    align-items: flex-start;
 
     .text-content {
       max-width: 100%;
-      h1 {
-        font-size: 4rem; // Ajustar tamaño del título
-        letter-spacing: 10px; // Reducir el espaciado de letras
-      }
 
+      h1 {
+        font-size: 4rem;
+        letter-spacing: 10px;
+      }
       p {
-        font-size: 1.4rem; // Ajustar tamaño del párrafo
+        font-size: 1.4rem;
       }
 
       .subscribe-button {
-        font-size: 1.5rem; // Ajustar tamaño del botón
-        padding: 0.5rem 1.5rem; // Ajustar padding del botón
+        font-size: 1.5rem;
+        padding: 0.5rem 1.5rem;
       }
     }
 
     .carousel-content {
-      width: 100%; // Ancho completo en pantallas pequeñas
-      height: 100%; // Ajustar altura automáticamente
+      width: 100%;
+      height: 100%;
 
       .carousel {
-        height: 100%; // Altura fija para el carrusel
+        height: 100%;
         scale: 0.7;
       }
     }
@@ -113,26 +120,26 @@
 
 @media (max-width: 768px) {
   .home-container {
-    padding: 1rem; // Reducir el padding
+    padding: 1rem;
     height: 60vh;
 
     .text-content {
       h1 {
-        font-size: 3rem; // Ajustar tamaño del título
+        font-size: 3rem;
       }
 
       p {
-        font-size: 1.2rem; // Ajustar tamaño del párrafo
+        font-size: 1.2rem;
       }
 
       .subscribe-button {
-        font-size: 1.2rem; // Ajustar tamaño del botón
-        padding: 0.5rem 1rem; // Ajustar padding del botón
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
       }
     }
 
     .carousel-content {
-      height: 100%; // Ajustar altura del carrusel en pantallas pequeñas
+      height: 100%;
     }
   }
 }
@@ -141,16 +148,16 @@
   .home-container {
     .text-content {
       h1 {
-        font-size: 2.5rem; // Ajustar tamaño del título
+        font-size: 2.5rem;
       }
 
       p {
-        font-size: 1rem; // Ajustar tamaño del párrafo
+        font-size: 1rem;
       }
 
       .subscribe-button {
-        font-size: 1rem; // Ajustar tamaño del botón
-        padding: 0.5rem; // Ajustar padding del botón
+        font-size: 1rem;
+        padding: 0.5rem;
       }
     }
   }

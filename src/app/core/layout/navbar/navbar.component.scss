@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
 .navbar {
-  background-image: url('../../../../assets/Navbar.png');
+  background-image: url("../../../../assets/Navbar.png");
   background-size: cover;
   background-position: center;
   color: white;
@@ -33,8 +35,10 @@
 
     a {
       color: white;
+      font-family: "Inter", sans-serif;
+      letter-spacing: 3px;
       text-decoration: none;
-      font-size: 25px;
+      font-size: 30px;
 
       &:hover {
         text-decoration: underline;
@@ -50,63 +54,14 @@
     a {
       color: white;
       text-decoration: none;
-      font-size: 25px;
+      font-size: 30px;
+      font-family: "Inter", sans-serif;
+      letter-spacing: 3px;
 
       &:hover {
         text-decoration: underline;
       }
     }
-  }
-}
-
-
-.dropdown {
-  position: relative;
-  display: none;
-
-  .dropbtn {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: bold;
-    color: #ffffff;
-    padding: 10px 15px;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-
-    &:hover {
-      color: #313131;
-    }
-  }
-
-  .dropdown-content {
-    display: block;
-    position: absolute;
-    background-color: #fff;
-    min-width: 200px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-    z-index: 1;
-    margin-top: 8px;
-
-    a {
-      color: #000000;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-      transition: background-color 0.3s;
-
-      &:hover {
-        background-color: #e0e0e0;
-        text-decoration: none;
-        cursor: pointer;
-      }
-    }
-  }
-
-  &.open .dropdown-content {
-    display: block;
   }
 }
 
@@ -133,7 +88,7 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
     color: #ffffff;
     padding: 10px 15px;
@@ -148,23 +103,30 @@
   .dropdown-content {
     display: block;
     position: absolute;
-    background-color: #fff;
-    min-width: 200px;
+    background-color: #535453;
+    min-width: 230px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
+    border-radius: 8px;
     z-index: 1;
     margin-top: 8px;
+    right: 20px;
 
     a {
-      color: #000000;
-      padding: 12px 16px;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 10px 8px;
       text-decoration: none;
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
       transition: background-color 0.3s;
+      border-radius: 8px;
 
       &:hover {
-        background-color: #e0e0e0;
+        background-color: #252525;
         text-decoration: none;
+        border-radius: 8px;
         cursor: pointer;
       }
     }
@@ -186,7 +148,7 @@
 }
 
 .navbar-mobile {
-  background-image: url('../../../../assets/Navbar.png');
+  background-image: url("../../../../assets/Navbar.png");
   background-size: cover;
   background-position: center;
   color: white;
@@ -234,16 +196,17 @@
     border-radius: 8px;
     position: absolute;
     top: 60px;
-    width: 90%;
+    width: 85%;
     z-index: 1000;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 
     a {
       color: white;
       text-decoration: none;
-      font-size: 18px;
+      font-size: 20px;
       padding: 10px;
       transition: background-color 0.3s;
+      font-weight: bold;
 
       &:hover {
         background-color: rgba(255, 255, 255, 0.2);
@@ -277,19 +240,23 @@
         .dropdown-content {
           display: block;
           position: absolute;
-          background-color: #ffffff;
-          min-width: 200px;
+          background-color: #535453;
           z-index: 1001;
+          left: 4px;
+          width: 100%;
 
           a {
-            color: #000000;
+            color: white;
             padding: 10px;
             text-decoration: none;
             display: block;
             transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
 
             &:hover {
-              background-color: #f0f0f0;
+              background-color: #252525;
             }
           }
         }

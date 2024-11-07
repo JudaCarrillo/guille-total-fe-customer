@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 .about-container {
   position: relative;
   height: auto;
@@ -11,36 +14,34 @@
     top: 0;
     left: 50%;
     object-fit: cover;
-    opacity: 0.3; // Ajusta la opacidad de la imagen para que el texto sea legible
+    opacity: 1;
     z-index: 1;
   }
 
   .content {
     position: relative;
-    z-index: 2; // Para asegurar que el texto esté encima de la imagen de fondo
+    z-index: 2;
     padding: 20px;
     width: 80vw;
     height: 90%;
     margin: auto;
-    background-color: transparent; // Fondo oscuro semi-transparente detrás del texto
+    background-color: transparent;
     align-content: center;
   }
 
   .title {
-    font-size: 50px;
-    font-weight: bold;
+    font-size: 40px;
+    letter-spacing: 5px;
+    font-family: "Anton", sans-serif;
     margin-bottom: 40px;
   }
 
   .description, .team {
-    font-size: 34px;
+    font-size: 30px;
     line-height: 1.5;
+    font-family: "Inter", sans-serif;
+    letter-spacing: 2px;
     margin-bottom: 20px;
   }
 
-  .separator {
-    height: 2px;
-    background-color: #ffffff;
-    margin-top: 20px;
-  }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { debounceTime } from 'rxjs/operators';
 import { fromEvent } from 'rxjs';
+import { AuthService } from '../../../modules/auth/services/auth.service'; // Importar el servicio AuthService
 
 @Component({
   selector: 'app-navbar',
@@ -15,8 +16,10 @@ export class NavbarComponent implements OnInit {
   menuOpen = false;
   isMobile = window.innerWidth <= 1080;
 
+  constructor(private authService: AuthService) { }
+
   ngOnInit() {
-    this.userName = localStorage.getItem('userName');
+    this.userName = this.authService.getUsername(); // Obtener el nombre de usuario desde el servicio
     fromEvent(window, 'resize')
       .pipe(debounceTime(100))
       .subscribe(() => this.checkMobileView());
@@ -61,15 +64,19 @@ export class NavbarComponent implements OnInit {
     this.dropdownOpen = false;
   }
 
+  // Método para cerrar sesión usando AuthService
   logout() {
-    localStorage.removeItem('userName');
+    this.authService.logout();
     this.userName = null;
     this.closeDropdown();
+    window.location.reload();
   }
 
+  // Método que se llama cuando el usuario se loguea correctamente
   onLogin(userName: string) {
     this.userName = userName;
     this.closeSigninModal();
     this.closeDropdown();
+    window.location.reload();
   }
 }

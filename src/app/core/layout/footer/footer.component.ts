@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
-  @Input() text: string = ''; // Propiedad de entrada para el texto del footer
+  @Input() text: string = '';
 }

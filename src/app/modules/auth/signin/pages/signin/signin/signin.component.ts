@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { SigninData } from '../../../interfaces/signin.interface';
+import { AuthService } from '../../../../services/auth.service'; // Importar el servicio AuthService
 import { NgIf } from '@angular/common';
 
 @Component({
@@ -23,7 +25,11 @@ export class SigninComponent {
 
   errorMessage: string | null = null; // Para mostrar mensajes de error
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private toastr: ToastrService,
+    private authService: AuthService // Inyectamos el AuthService
+  ) {
     this.signinForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
@@ -37,11 +43,19 @@ export class SigninComponent {
       // Simulación de autenticación con datos falsos
       if (formValues.email === this.fakeUser.email && formValues.password === this.fakeUser.password) {
         console.log('Login exitoso');
-        this.login.emit(formValues.email); // Emite el correo como nombre del usuario
-        localStorage.setItem('userName', formValues.email);
+
+        // Usamos el AuthService para iniciar sesión
+        this.authService.login(formValues.email);
+        this.login.emit(formValues.email);
+
+        // Mensaje de éxito de Toastr
+        this.toastr.success('Inicio de sesión exitoso', '¡Bienvenido!');
+
         this.cerrar(); // Cierra el modal después de iniciar sesión
       } else {
-        this.errorMessage = 'Email o contraseña incorrectos'; // Mensaje de error
+        this.errorMessage = 'Correo o contraseña incorrectos';
+        // Mensaje de error de Toastr
+        this.toastr.error(this.errorMessage, 'Error');
         console.error(this.errorMessage);
       }
     }

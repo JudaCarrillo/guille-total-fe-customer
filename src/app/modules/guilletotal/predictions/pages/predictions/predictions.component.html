@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="predictions-section">
+    <section>
+      <h2>Partidos Siguientes</h2>
+      <div class="game" [routerLink]="['/game', game.id]" *ngFor="let game of upcomingGames">
+        <div class="teams">
+          <span>{{ game.team1 }} {{ game.team1Flag }}</span>
+          <app-percentage-bar
+            [team1Percentage]="game.team1Percentage"
+            [drawPercentage]="game.drawPercentage"
+            [team2Percentage]="game.team2Percentage"
+          ></app-percentage-bar>
+          <span>{{ game.team2 }} {{ game.team2Flag }}</span>
+        </div>
+        <div class="time">{{ game.time }}</div>
+        <!-- Enlace para redirigir a la página de detalles del juego -->
+      </div>
+    </section>
+
+    <section>
+      <h2>Partidos Pasados</h2>
+      <div class="game" [routerLink]="['/game', game.id]" *ngFor="let game of pastGames">
+        <div class="teams">
+          <span>{{ game.team1 }} {{ game.team1Flag }}</span>
+          <app-past-game-bar
+            [team1Goals]="game.team1Goals"
+            [team2Goals]="game.team2Goals"
+            [drawPercentage]="game.drawPercentage"
+            [team1Percentage]="game.team1Percentage"
+            [team2Percentage]="game.team2Percentage"
+          ></app-past-game-bar>
+          <span>{{ game.team2 }} {{ game.team2Flag }}</span>
+        </div>
+        <div class="time">{{ game.time }}</div>
+        <!-- Enlace para redirigir a la página de detalles del juego -->
+      </div>
+    </section>
+  </div>
+</div>
+<app-footer
+  text="Suscríbete a nuestro plan premium y obtén predicciones con mayor probabilidad de acierto"
+></app-footer>

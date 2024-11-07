@@ -5,16 +5,16 @@ import { PaymentGatewayComponent } from '../../../modules/Payment/payment-gatewa
 @Component({
   selector: 'app-subscription',
   templateUrl: './subscription.component.html',
-  styleUrls: ['./subscription.component.scss'] // Cambié 'styleUrl' a 'styleUrls' para el array de estilos
+  styleUrls: ['./subscription.component.scss']
 })
 export class SubscriptionComponent {
   constructor(
     private dialogRef: MatDialogRef<SubscriptionComponent>,
-    private dialog: MatDialog // Inyectamos MatDialog para abrir otros diálogos
+    private dialog: MatDialog
   ) {}
 
-  // Método para abrir el diálogo de pago
   openPaymentDialog(): void {
+    this.close();
     const dialogRef = this.dialog.open(PaymentGatewayComponent, {
       width: '850px',
       maxWidth: '90vw',
@@ -28,15 +28,7 @@ export class SubscriptionComponent {
       }
     });
   }
-
-  // Método para cerrar el modal actual
   close(): void {
     this.dialogRef.close();
-  }
-
-  // Método para suscribirse
-  subscribe(): void {
-    console.log('Usuario suscrito al plan Pro');
-    this.dialogRef.close(); // Cerrar el modal después de la suscripción
   }
 }

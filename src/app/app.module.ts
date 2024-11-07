@@ -14,6 +14,15 @@ import { FooterComponent } from './core/layout/footer/footer.component';
 import { DropShadowComponent } from './core/layout/drop-shadow/drop-shadow.component';
 import { SubscriptionComponent } from './modules/Payment/subscription/subscription.component';
 import { PaymentGatewayComponent } from './modules/Payment/payment-gateway/payment-gateway.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { PredictionsComponent } from './modules/guilletotal/predictions/pages/predictions/predictions.component';
+import { PercentageBarComponent } from './modules/guilletotal/predictions/components/percentage-bar/percentage-bar.component';
+import { PastGameBarComponent } from './modules/guilletotal/predictions/components/past-game-bar/past-game-bar.component';
+import { DetailPredictionComponent } from './modules/guilletotal/predictions/pages/detail-prediction/detail-prediction.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { AnalysisComponent } from './modules/guilletotal/predictions/components/analysis/analysis.component';
+import { UpcomingMatchesngComponent } from './modules/guilletotal/predictions/components/upcoming-matchesng/upcoming-matchesng.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +34,12 @@ import { PaymentGatewayComponent } from './modules/Payment/payment-gateway/payme
     DropShadowComponent,
     SubscriptionComponent,
     PaymentGatewayComponent,
-
+    PredictionsComponent,
+    PercentageBarComponent,
+    PastGameBarComponent,
+    DetailPredictionComponent,
+    AnalysisComponent,
+    UpcomingMatchesngComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,10 +48,15 @@ import { PaymentGatewayComponent } from './modules/Payment/payment-gateway/payme
     FormsModule,
     SigninComponent,
     SignupComponent,
-],
-  providers: [
-    provideAnimationsAsync()
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+      closeButton: true,
+    }),
   ],
-  bootstrap: [AppComponent]
+  providers: [provideAnimationsAsync()],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

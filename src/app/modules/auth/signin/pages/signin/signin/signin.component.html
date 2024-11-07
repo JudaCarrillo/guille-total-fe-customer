@@ -32,7 +32,6 @@
               <small *ngIf="signinForm.controls['password'].errors?.['required']">La contraseña es obligatoria</small>
             </div>
           </div>
-          <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
           <button type="submit" [disabled]="signinForm.invalid">Iniciar Sesión</button>
         </form>
       </div>

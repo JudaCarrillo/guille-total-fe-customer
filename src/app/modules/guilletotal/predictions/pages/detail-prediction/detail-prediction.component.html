@@ -1,1 +1,11 @@
-<p>detail-prediction works!</p>
+<app-navbar></app-navbar>
+<div class="detail-prediction">
+  <app-general-predictions [gameId]="gameId"></app-general-predictions>
+  <div class="separator"></div>
+  <h2>Análisis del Partido</h2>
+  <div class="detail-prediction-container">
+    <app-analysis [gameId]="gameId"></app-analysis>
+    <app-upcoming-matches [gameId]="gameId"></app-upcoming-matches>
+  </div>
+</div>
+<app-footer></app-footer>

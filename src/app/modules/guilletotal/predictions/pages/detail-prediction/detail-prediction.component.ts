@@ -13,7 +13,7 @@ export class DetailPredictionComponent implements OnInit {
 
   ngOnInit() {
     // Obtén el parámetro 'id' de la URL
-    this.gameId = this.route.snapshot.paramMap.get('id');
+    this.gameId = this.route.snapshot.paramMap.get('id') || '';
     console.log('Game ID:', this.gameId); // Solo para verificar que funciona
     // Aquí puedes cargar los detalles del juego usando 'gameId'
   }

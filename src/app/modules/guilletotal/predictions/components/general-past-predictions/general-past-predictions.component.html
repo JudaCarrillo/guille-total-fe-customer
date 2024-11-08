@@ -1,0 +1,57 @@
+<div class="prediction-container">
+  <h2>PREDICCION PASADA</h2>
+  <!-- Team and Prediction Bar Section -->
+  <div class="teams">
+    <div class="team">
+      <img [src]="team1Flag" alt="Team 1 Flag" />
+      <span>{{ matchData.team1.name }}</span>
+    </div>
+
+    <div class="team">
+      <img [src]="team2Flag" alt="Team 2 Flag" />
+      <span>{{ matchData.team2.name }}</span>
+    </div>
+  </div>
+
+  <!-- Prediction Bar -->
+  <div class="percentage-bar-container">
+    <div class="percentage-bar">
+      <div class="bar team1"
+           [style.width.%]="team1Percentage"
+           (mouseenter)="showTeamName('team1')"
+           (mouseleave)="hideTeamName()">
+        <span class="percentage team1-percentage">{{ team1Percentage }}%</span>
+        <span class="team-name" *ngIf="teamName === 'team1'">{{ matchData.team1.name }}</span>  <!-- Nombre del equipo en el hover -->
+      </div>
+      <div class="bar draw"
+           [style.width.%]="drawPercentage"
+           (mouseenter)="showTeamName('draw')"
+           (mouseleave)="hideTeamName()">
+        <span class="percentage draw-percentage">{{ drawPercentage }}%</span>
+        <span class="team-name" *ngIf="teamName === 'draw'">Draw</span>  <!-- Nombre del equipo en el hover -->
+      </div>
+      <div class="bar team2"
+           [style.width.%]="team2Percentage"
+           (mouseenter)="showTeamName('team2')"
+           (mouseleave)="hideTeamName()">
+        <span class="percentage team2-percentage">{{ team2Percentage }}%</span>
+        <span class="team-name" *ngIf="teamName === 'team2'">{{ matchData.team2.name }}</span>  <!-- Nombre del equipo en el hover -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Line Chart -->
+  <div id="chart">
+    <apx-chart
+      [series]="chartOptions.series"
+      [chart]="chartOptions.chart"
+      [xaxis]="chartOptions.xaxis"
+      [yaxis]="chartOptions.yaxis"
+      [grid]="chartOptions.grid"
+      [legend]="chartOptions.legend"
+      [stroke]="chartOptions.stroke"
+      [tooltip]="chartOptions.tooltip">
+    </apx-chart>
+  </div>
+
+</div>

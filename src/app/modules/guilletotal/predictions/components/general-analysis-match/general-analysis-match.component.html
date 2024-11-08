@@ -1,0 +1,22 @@
+<div class="analysis-container">
+  <div class="team-info">
+    <img src="../../../../../../assets/peru.png" alt="Flag of Peru" class="team-info__image">
+  </div>
+
+  <div class="match-details">
+    <div class="details-column">
+      <p><span>DT :</span> {{ matchDetails.dt }}</p>
+      <p><span>ESTADIO :</span> {{ matchDetails.stadium }}</p>
+      <p><span>ELEVACIÓN :</span> {{ matchDetails.elevation }}</p>
+      <p><span>CONDICIÓN :</span> {{ matchDetails.condition }}</p>
+      <p><span>EVENTO :</span> {{ matchDetails.event }}</p>
+    </div>
+
+    <div class="details-column">
+      <p><span>CIUDAD :</span> {{ matchDetails.city }}</p>
+      <p><span>PAÍS :</span> {{ matchDetails.country }}</p>
+      <p><span>RIVAL :</span> {{ matchDetails.rival }}</p>
+      <p><span>FECHA :</span> {{ matchDetails.date | date: 'dd/MM/yyyy' }}</p>
+    </div>
+  </div>
+</div>

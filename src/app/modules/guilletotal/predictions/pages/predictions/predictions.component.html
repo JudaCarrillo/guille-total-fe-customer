@@ -20,7 +20,7 @@
 
     <section>
       <h2>Partidos Pasados</h2>
-      <div class="game" [routerLink]="['/game', game.id]" *ngFor="let game of pastGames">
+      <div class="game" [routerLink]="['/prediction-past', game.id]" *ngFor="let game of pastGames">
         <div class="teams">
           <span>{{ game.team1 }} {{ game.team1Flag }}</span>
           <app-past-game-bar

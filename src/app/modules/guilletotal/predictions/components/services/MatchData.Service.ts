@@ -84,6 +84,20 @@ export class MatchDataService {
         { team1: 'Argentina', team2: 'Brazil', date: '2024-11-20', time: '18:30' },
         { team1: 'Chile', team2: 'Bolivia', date: '2024-11-22', time: '17:00' },
       ],
+      matchDetails: {
+        dt: 'Ricardo Gareca',
+        team1: 'Argentina',
+        team2: 'Peru',
+        date: '2024-11-10',
+        time: '18:00',
+        stadium: 'Monumental',
+        city: 'Lima',
+        country: 'Perú',
+        elevation: 1100,
+        condition: 'Home',
+        event: 'Mundial',
+        rival: 'Argentina',
+      },
     };
 
     // Convertir los nombres de los equipos a mayúsculas

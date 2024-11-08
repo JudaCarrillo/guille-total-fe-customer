@@ -26,6 +26,8 @@ import { AnalysisComponent } from './modules/guilletotal/predictions/components/
 import { UpcomingMatchesComponent } from './modules/guilletotal/predictions/components/upcoming-matchesng/upcoming-matchesng.component';
 import { GeneralPredictionsComponent } from './modules/guilletotal/predictions/components/general-predictions/general-predictions.component';
 import { PredictionPastComponent } from './modules/guilletotal/predictions/pages/prediction-past/prediction-past.component';
+import { GeneralPastPredictionsComponent } from './modules/guilletotal/predictions/components/general-past-predictions/general-past-predictions.component';
+import { GeneralAnalysisMatchComponent } from './modules/guilletotal/predictions/components/general-analysis-match/general-analysis-match.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { PredictionPastComponent } from './modules/guilletotal/predictions/pages
     AnalysisComponent,
     UpcomingMatchesComponent,
     PredictionPastComponent,
+    GeneralPastPredictionsComponent,
+    GeneralAnalysisMatchComponent,
 
   ],
   imports: [

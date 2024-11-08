@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from '../../interfaces/game.interface';
 import { AuthService } from '../../../../auth/services/auth.service';
+import { SessionService } from '../../../../../common/services/session/session.service';
 @Component({
   selector: 'app-predictions',
   templateUrl: './predictions.component.html',
@@ -66,11 +67,13 @@ export class PredictionsComponent implements OnInit {
     },
   ];
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    private sessionService: SessionService,
+  ) {}
 
   ngOnInit(): void {
     // Si el usuario no ha iniciado sesión, solo mostramos un partido
-    if (!this.authService.isLoggedIn()) {
+    if (!this.sessionService.isLoggedIn()) {
       this.upcomingGames = [this.upcomingGames[0]]; // Solo el primer partido
       this.pastGames = [this.pastGames[0]]; // Solo el primer partido pasado
     }

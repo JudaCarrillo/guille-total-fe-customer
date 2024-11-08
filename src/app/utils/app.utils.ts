@@ -1,3 +1,5 @@
+import { UserTypes } from "./constants";
+
 export class Utils {
   public static isJson(item: any) {
     item = typeof item !== 'string' ? JSON.stringify(item) : item;
@@ -31,5 +33,12 @@ export class Utils {
 
   public static removeLocalStorage(key: string): void {
     localStorage.removeItem(key);
+  }
+
+  public static isUserPremium(): boolean {
+    const userData: any = this.getLocalStorageDecode('xUserData');
+    if (!userData) return false;
+
+    return userData?.user?.userType == UserTypes.PREMIUM;
   }
 }

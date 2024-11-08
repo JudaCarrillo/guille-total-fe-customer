@@ -3,7 +3,28 @@
   <div class="text-content">
     <h1>GUILLE TOTAL</h1>
     <p>Predicciones exclusivas para partidos peruanos... <br /> ¡Obtén la mejor información y adelántate al juego!</p>
-    <button class="subscribe-button" (click)="openSubscriptionModal()">Suscríbete YA</button>
+
+    <ng-container *ngIf="!isNotPremium()">
+      <button class="subscribe-button" (click)="openSubscriptionModal()">Suscríbete YA</button>
+    </ng-container>
+
+    <div class="modal" *ngIf="showSigninModal">
+      <div class="modal-content">
+        <app-signin
+          [cerrar]="closeSigninModal.bind(this)"
+          (openSignupModal)="openSignupModal()"
+        >
+        </app-signin>
+      </div>
+    </div>
+
+    <div class="modal" *ngIf="showSignupModal">
+      <div class="modal-content">
+        <app-signup [cerrar]="closeSignupModal.bind(this)"></app-signup>
+      </div>
+    </div>
+
+
   </div>
 
   <div class="carousel-content">

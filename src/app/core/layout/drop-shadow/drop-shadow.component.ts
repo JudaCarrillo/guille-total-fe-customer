@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { SubscriptionComponent } from '../../../modules/Payment/subscription/subscription.component';
+import { SessionService } from '../../../common/services/session/session.service';
+import { Utils } from '../../../utils/app.utils';
 
 @Component({
   selector: 'app-drop-shadow',
@@ -9,7 +11,16 @@ import { SubscriptionComponent } from '../../../modules/Payment/subscription/sub
 })
 export class DropShadowComponent {
   isModalVisible = false;
-  constructor(private dialog: MatDialog) {}
+  isUserPremium = false;
+
+  constructor(
+    private dialog: MatDialog,
+  ) {}
+
+  isNotPremium() {
+    return Utils.isUserPremium();
+  }
+
   openSubscriptionModal(): void {
     this.dialog.open(SubscriptionComponent, {
       width: '450px',
@@ -17,6 +28,7 @@ export class DropShadowComponent {
       panelClass: 'custom-modal'
     });
   }
+
   toggleModal() {
     this.isModalVisible = !this.isModalVisible;
   }

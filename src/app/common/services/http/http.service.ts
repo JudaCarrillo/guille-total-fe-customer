@@ -12,7 +12,7 @@ import { SessionService } from "../session/session.service";
 })
 export default class HttpService {
   private headers = new HttpHeaders();
-  private defaultAPI = environment.GUILLE_TOTAL_DEFAULT_API;
+  private defaultAPI = environment.GUILLE_TOTAL_BASE_URL;
   private URL = '';
 
   constructor(

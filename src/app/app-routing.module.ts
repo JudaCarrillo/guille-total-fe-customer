@@ -5,6 +5,7 @@ import { AboutComponent } from './modules/guilletotal/about/pages/about/about.co
 import { PredictionsComponent } from './modules/guilletotal/predictions/pages/predictions/predictions.component';
 import { DetailPredictionComponent } from './modules/guilletotal/predictions/pages/detail-prediction/detail-prediction.component';
 import { PredictionPastComponent } from './modules/guilletotal/predictions/pages/prediction-past/prediction-past.component';
+import { IsPremiumGuard } from './common/guards/is-premium.guard';
 const routes: Routes = [
   { path: '',
     component: HomeComponent,
@@ -24,6 +25,7 @@ const routes: Routes = [
   {
     path: 'game/:id',
     component: DetailPredictionComponent,
+    canActivate: [IsPremiumGuard]
   },
   {
     path: 'prediction-past/:id',

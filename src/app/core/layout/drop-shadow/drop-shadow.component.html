@@ -5,7 +5,10 @@
       <h3>GuilleTotal Pro</h3>
       <div class="content-pro">
         <p>Modelo de predicciones más preciso con gráficos</p>
-        <button (click)="openSubscriptionModal()">Suscribirse</button>
+
+        <ng-container *ngIf="!isNotPremium()" >
+          <button (click)="openSubscriptionModal()">Suscribirse</button>
+        </ng-container>
       </div>
     </div>
     <div class="option">

@@ -14,15 +14,15 @@ export class AuthService {
 
   // Iniciar sesión
   login(body: SigninData) {
-    return this.httpService.post('/login', body, [], 'GUILLE_TOTAL_DEFAULT_API', false);
+    return this.httpService.post('login', body, [], 'GUILLE_TOTAL_SECURITY_API', false);
   }
 
   // Cerrar sesión
   logout() {
-    return this.httpService.post('/Auth/logout', {}, [], 'GUILLE_TOTAL_DEFAULT_API', true);
+    return this.httpService.post('Auth/logout', {}, [], 'GUILLE_TOTAL_SECURITY_API', true);
   }
 
   signup(body: User) {
-    return this.httpService.post('/register', body, [], 'GUILLE_TOTAL_DEFAULT_API', false);
+    return this.httpService.post('register', body, [], 'GUILLE_TOTAL_SECURITY_API', false);
   }
 }

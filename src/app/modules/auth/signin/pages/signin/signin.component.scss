@@ -17,6 +17,8 @@ $link-color: #1A904D;
   position: absolute;
   width: 100vw;
   z-index: 9999;
+  top: 10%;
+  left: -21px;
 }
 
 .signin-container {
@@ -119,6 +121,7 @@ $link-color: #1A904D;
             display: block;
             margin-bottom: 0.5rem;
             font-weight: bold;
+            color: $black-color;
           }
 
         input {

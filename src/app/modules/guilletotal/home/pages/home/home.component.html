@@ -17,7 +17,7 @@
         </app-signin>
       </div>
     </div>
-
+    <div class="modal-overlay" *ngIf="showSigninModal || showSignupModal"></div>
     <div class="modal" *ngIf="showSignupModal">
       <div class="modal-content">
         <app-signup [cerrar]="closeSignupModal.bind(this)"></app-signup>

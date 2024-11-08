@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { SigninComponent } from './modules/auth/signin/pages/signin/signin/signin.component';
@@ -22,7 +23,9 @@ import { PastGameBarComponent } from './modules/guilletotal/predictions/componen
 import { DetailPredictionComponent } from './modules/guilletotal/predictions/pages/detail-prediction/detail-prediction.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { AnalysisComponent } from './modules/guilletotal/predictions/components/analysis/analysis.component';
-import { UpcomingMatchesngComponent } from './modules/guilletotal/predictions/components/upcoming-matchesng/upcoming-matchesng.component';
+import { UpcomingMatchesComponent } from './modules/guilletotal/predictions/components/upcoming-matchesng/upcoming-matchesng.component';
+import { GeneralPredictionsComponent } from './modules/guilletotal/predictions/components/general-predictions/general-predictions.component';
+import { PredictionPastComponent } from './modules/guilletotal/predictions/pages/prediction-past/prediction-past.component';
 
 @NgModule({
   declarations: [
@@ -35,11 +38,14 @@ import { UpcomingMatchesngComponent } from './modules/guilletotal/predictions/co
     SubscriptionComponent,
     PaymentGatewayComponent,
     PredictionsComponent,
+    GeneralPredictionsComponent,
     PercentageBarComponent,
     PastGameBarComponent,
     DetailPredictionComponent,
     AnalysisComponent,
-    UpcomingMatchesngComponent,
+    UpcomingMatchesComponent,
+    PredictionPastComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -49,6 +55,8 @@ import { UpcomingMatchesngComponent } from './modules/guilletotal/predictions/co
     SigninComponent,
     SignupComponent,
     BrowserAnimationsModule,
+    NgApexchartsModule,
+    HttpClientModule,
     ToastrModule.forRoot({
       timeOut: 3000,
       positionClass: 'toast-top-right',

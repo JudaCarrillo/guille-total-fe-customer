@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300..700&family=Anek+Malayalam:wght@100..800&family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Estilo general del contenedor */
+div {
+  padding: 5px;
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Estilo para el título */
+h2 {
+  font-size: 30px;
+  font-family: "Anek Malayalam", sans-serif;
+  color: white;
+  margin-bottom: 20px;
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+/* Estilo de la tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+td {
+  padding: 12px;
+  height: 76px;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+
+.team {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.team-name {
+  font-size: 20px;
+  font-family: "Anek Malayalam", sans-serif;
+  letter-spacing: 5px;
+  color: white;
+  font-weight: bolder;
+}
+
+/* Estilos para las banderas */
+.country-flag {
+  width: 30px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 10px; /* Separación entre la bandera y el nombre del equipo */
+}
+
+/* Estilos para la fecha y hora */
+.match-time-column {
+  text-align: right;
+}
+
+.match-date {
+  display: block;
+  font-weight: bold;
+  color: white;
+  font-size: 1rem;
+}
+
+.match-time {
+  display: block;
+  font-style: italic;
+  color: #777;
+}
+
+
+/* Media Queries para hacer la tabla más responsiva */
+
+/* Pantallas medianas (tabletas) */
+@media (max-width: 768px) {
+  table {
+    width: 100%; /* Asegura que la tabla ocupe el 100% del ancho */
+    font-size: 14px; /* Reduce el tamaño de la fuente */
+  }
+
+  td {
+    padding: 10px; /* Ajusta el padding */
+  }
+
+  h2 {
+    font-size: 24px; /* Tamaño más pequeño para pantallas medianas */
+  }
+
+  .team-name {
+    font-size: 18px; /* Reduce el tamaño de los nombres de los equipos */
+  }
+
+  .country-flag {
+    width: 25px; /* Ajuste de tamaño de la bandera */
+    height: 18px;
+  }
+}
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+  table {
+    width: 100%;
+    font-size: 12px; /* Ajusta aún más el tamaño de la fuente */
+  }
+
+  td {
+    padding: 8px; /* Reduce el padding */
+  }
+
+  h2 {
+    font-size: 20px; /* Tamaño más pequeño en móviles */
+  }
+
+  .team-name {
+    font-size: 16px; /* Nombres de los equipos más pequeños */
+  }
+
+  .country-flag {
+    width: 20px; /* Más pequeño en pantallas móviles */
+    height: 15px;
+  }
+
+  .match-date,
+  .match-time {
+    font-size: 0.9rem; /* Ajusta el tamaño de la fecha y hora */
+  }
+}

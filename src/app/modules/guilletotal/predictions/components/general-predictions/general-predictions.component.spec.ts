@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PredictionsComponent } from './predictions.component';
+import { GeneralPredictionsComponent  } from './general-predictions.component';
 
 describe('PredictionsComponent', () => {
-  let component: PredictionsComponent;
-  let fixture: ComponentFixture<PredictionsComponent>;
+  let component: GeneralPredictionsComponent;
+  let fixture: ComponentFixture<GeneralPredictionsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PredictionsComponent]
+      declarations: [GeneralPredictionsComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PredictionsComponent);
+    fixture = TestBed.createComponent(GeneralPredictionsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

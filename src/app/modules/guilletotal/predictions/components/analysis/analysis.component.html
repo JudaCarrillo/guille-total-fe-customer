@@ -1,0 +1,19 @@
+<div>
+  <h2>ULTIMOS ENCUENTROS</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Últimos Partidos</th>
+        <th>Fecha</th>
+        <th>Resultado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let match of recentMatches">
+        <td>{{ match.title }}</td>
+        <td>{{ match.date }}</td>
+        <td>{{ match.result }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

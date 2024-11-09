@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300..700&family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.prediction-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 1400px;
+  margin: auto;
+  margin-top: 55px;
+
+  h2{
+    width: 100%;
+    padding: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: "Anton", sans-serif;
+    letter-spacing: 6px;
+    color: white;
+  }
+
+  .teams {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 85px;
+    width: 100%;
+    max-width: 700px;
+    align-items: flex-end;
+  }
+
+  .team {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .team img {
+    width: 170px;
+    height: 160px;
+    border-radius: 50%;
+  }
+  .team span {
+    font-size: 35px;
+    font-weight: bold;
+    font-family: "Akshar", sans-serif;
+    margin-bottom: 10px;
+    color: white;
+  }
+
+  .prediction-history {
+    font-size: 0.8em;
+    color: #555;
+    text-align: center;
+    margin-top: 5px;
+    display: flex;
+    gap: 10px;
+
+    span {
+      width: 30px;
+      height: 30px;
+      border-radius: 1rem;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: "Akshar", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .win {
+      background-color: #4caf50;  /* Verde para ganar */
+      color: white;
+    }
+
+    .lose {
+      background-color: #f44336;  /* Rojo para perder */
+      color: white;
+    }
+
+    .draw {
+      background-color: #fafaf8;  /* Amarillo para empate */
+      color: black;
+    }
+  }
+
+  .percentage-bar-container {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .percentage-bar {
+    display: flex;
+    width: 100%;
+    height: 7px;
+    border-radius: 10px;
+    margin: 20px 0;
+    position: relative;
+    background-color: #ddd;
+  }
+
+  .bar {
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .bar:hover .team-name {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .team1 {
+    background-color: #4caf50;
+    border-radius: 6px 0px 0px 6px;
+  }
+
+  .draw {
+    background-color: #ffeb3b;
+  }
+
+  .team2 {
+    background-color: #f44336;
+    border-radius: 0px 6px 6px 0px;
+  }
+
+  .percentage {
+    position: absolute;
+    top: -30px;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    width: 100%;
+    text-align: left;
+  }
+
+  .team-name {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+
+  /* Estilos del gráfico */
+  #chart {
+    width: 100%;
+    max-width: 1100px;
+    margin-top: 30px;
+
+  }
+
+  /* Estilos responsive */
+  @media (max-width: 768px) {
+    .teams {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .percentage-bar-container {
+      width: 90%;
+    }
+
+    .percentage-bar {
+      margin: 10px 0;
+    }
+
+    .team img {
+      width: 70%;
+    }
+  }
+}

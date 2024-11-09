@@ -1,0 +1,35 @@
+<div>
+  <h2>Próximos Encuentros</h2>
+  <div>
+    <table>
+      <tbody>
+        <tr *ngFor="let match of upcomingMatches">
+          <td class="team-column">
+            <div class="team">
+              <img
+                [src]="getCountryFlag(match.team1)"
+                alt="Flag of {{ match.team1 }}"
+                class="country-flag"
+              />
+              <span class="team-name">SELECCION {{ match.team1 }}</span>
+            </div>
+            <div class="team">
+              <img
+                [src]="getCountryFlag(match.team2)"
+                alt="Flag of {{ match.team2 }}"
+                class="country-flag"
+              />
+              <span class="team-name">SELECCION {{ match.team2 }}</span>
+            </div>
+          </td>
+
+          <!-- Segunda celda: Fecha y hora -->
+          <td class="match-time-column">
+            <span class="match-date">{{ match.date }}</span>
+            <span class="match-time">{{ match.time }}</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

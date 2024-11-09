@@ -1,0 +1,13 @@
+<div class="percentage-bar-container">
+  <div class="percentage-bar">
+    <div class="bar team1" [style.width.%]="team1Percentage">
+      <span class="goles-percentage goles-team1">{{ team1Goals }}</span>
+    </div>
+    <div class="bar draw" [style.width.%]="drawPercentage">
+      <span class="goles-percentage goles-draw">{{ drawPercentage }}%</span>
+    </div>
+    <div class="bar team2" [style.width.%]="team2Percentage">
+      <span class="goles-percentage goles-team2">{{ team2Goals }}</span>
+    </div>
+  </div>
+</div>

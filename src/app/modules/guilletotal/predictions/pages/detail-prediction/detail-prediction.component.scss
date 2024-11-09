@@ -1,0 +1,53 @@
+// detail-prediction.component.scss
+
+// Variables de color y espaciado
+$primary-color: #4caf50;
+$secondary-color: #ff9800;
+$background-color: #333;
+$highlight-color: #ffffff;
+$container-padding: 20px;
+
+// Contenedor principal de la predicción
+.detail-prediction {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 20px;
+}
+.separator {
+  height: 1px;
+  width: 80%;
+  background-color: #ffffff;
+  margin: 35px auto;
+}
+
+h2 {
+  font-family: "Anek Malayalam", sans-serif;
+  text-align: center;
+  font-size: 40px;
+  color: #ffffff;
+  margin-bottom: 20px;
+  letter-spacing: 5px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+// Contenedor de las secciones
+.detail-prediction-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; // Espaciado entre los componentes
+
+  // Cada componente se adapta para ser flexible en pantalla pequeña
+  > * {
+    flex: 1 1 100%; // Toma toda el ancho en pantallas pequeñas
+    @media (min-width: 768px) {
+      flex: 1 1 48%; // 2 columnas en pantallas medianas o grandes
+    }
+  }
+}
+
+// Estilo para el Navbar (si es necesario)
+
+// Estilos específicos para e

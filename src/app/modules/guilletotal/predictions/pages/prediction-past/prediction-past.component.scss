@@ -1,0 +1,31 @@
+$primary-color: #4caf50;
+$secondary-color: #ff9800;
+$background-color: #333;
+$highlight-color: #ffffff;
+$container-padding: 20px;
+
+// Contenedor principal de la predicción
+.prediction-past {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 20px;
+}
+.separator {
+  height: 1px;
+  width: 80%;
+  background-color: #ffffff;
+  margin: 35px auto;
+}
+
+h2 {
+  font-family: "Anek Malayalam", sans-serif;
+  text-align: center;
+  font-size: 40px;
+  color: #ffffff;
+  margin-bottom: 20px;
+  letter-spacing: 5px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}

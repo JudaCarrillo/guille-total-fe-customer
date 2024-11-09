@@ -1,0 +1,88 @@
+<!-- Navbar para pantallas grandes -->
+<div class="navbar" *ngIf="!isMobile">
+  <div class="container-navbar-logo">
+    <div class="logo">
+      <img src="../../../assets/logoGT.png" alt="Logo" />
+      <app-drop-shadow></app-drop-shadow>
+    </div>
+    <div class="menu">
+      <a routerLink="/">INICIO</a>
+      <a routerLink="/predictions">PREDICCIONES</a>
+      <a routerLink="/about">NOSOTROS</a>
+    </div>
+  </div>
+
+  <!-- Enlace de Autenticación -->
+  <div class="auth">
+    <a *ngIf="!userName" (click)="openSigninModal()">Ingresar / Registrarse</a>
+    <div class="dropdown" *ngIf="userName" (clickOutside)="closeDropdown()">
+      <button class="dropbtn" (click)="toggleDropdown()">
+        {{ userName }} ▼
+      </button>
+      <div class="dropdown-content" *ngIf="dropdownOpen">
+        <a (click)="logout()"
+          >Cerrar Sesión <img src="../../../../assets/salir.png" alt="Logout" />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar para pantallas pequeñas (Hamburguesa) -->
+<div class="navbar-mobile" *ngIf="isMobile">
+  <div class="container-navbar-logo">
+    <div class="logo">
+      <img src="../../../assets/logoGT.png" alt="Logo" />
+      <app-drop-shadow></app-drop-shadow>
+    </div>
+    <div class="hamburger" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <!-- Menú Hamburguesa (Se muestra cuando se hace clic en el icono de la hamburguesa) -->
+  <div class="hamburger-modal" *ngIf="menuOpen">
+    <a routerLink="/" (click)="closeMenu()">INICIO</a>
+    <a routerLink="/signup" (click)="closeMenu()">PREDICCIONES</a>
+    <a routerLink="/about" (click)="closeMenu()">NOSOTROS</a>
+
+    <div class="auth">
+      <a *ngIf="!userName" (click)="openSigninModal(); closeMenu()"
+        >Ingresar / Registrarse</a
+      >
+      <div class="dropdown" *ngIf="userName" (clickOutside)="closeDropdown()">
+        <button class="dropbtn" (click)="toggleDropdown()">
+          {{ userName }} ▼
+        </button>
+        <div class="dropdown-content" *ngIf="dropdownOpen">
+          <a (click)="logout(); closeMenu()"
+            >Cerrar Sesión
+            <img src="../../../../assets/salir.png" alt="Logout" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modales de Inicio de Sesión y Registro -->
+<div class="modal-overlay" *ngIf="showSigninModal || showSignupModal"></div>
+<!-- Modal de Inicio de Sesión -->
+<div class="modal" *ngIf="showSigninModal">
+  <div class="modal-content">
+    <app-signin
+      [cerrar]="closeSigninModal.bind(this)"
+      (openSignupModal)="openSignupModal()"
+    >
+    </app-signin>
+  </div>
+</div>
+
+<!-- Modal de Registro -->
+<div class="modal" *ngIf="showSignupModal">
+  <div class="modal-content">
+    <app-signup [cerrar]="closeSignupModal.bind(this)"></app-signup>
+  </div>
+</div>

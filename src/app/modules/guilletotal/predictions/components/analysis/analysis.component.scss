@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300..700&family=Anek+Malayalam:wght@100..800&family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+// Análisis de colores y fuentes
+$primary-color: #4caf50; // Color primario
+$secondary-color: #ff9800; // Color secundario
+$background-color: #333; // Color de fondo oscuro
+$highlight-color: #ffffff; // Color de texto
+
+// Contenedor principal
+div {
+  padding: 20px;
+  color: $highlight-color;
+  border-radius: 10px;
+  max-width: 100%;
+  margin: auto; // Centrado horizontal
+}
+
+// Título
+h2 {
+  font-family: "Anek Malayalam", sans-serif;
+  text-align: left;
+  font-size: 30px;
+  color: $highlight-color;
+  margin-bottom: 20px;
+  letter-spacing: 5px;
+}
+
+// Estilo para la tabla
+table {
+  width: 85%; // Asegura que ocupe el 100% del ancho
+  border-collapse: collapse;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid $highlight-color;
+
+  th, td {
+    border: 1px solid $highlight-color;
+    padding: 12px;
+    text-align: left;
+    font-size: 16px;
+  }
+
+  th {
+    color: $highlight-color;
+  }
+
+  td {
+    color: $highlight-color;
+  }
+}
+
+// Mejoras en la interactividad de las celdas
+td {
+  transition: background-color 0.3s ease;
+}
+
+// Si no hay datos para mostrar
+.no-data {
+  text-align: center;
+  font-size: 18px;
+  color: $secondary-color;
+  padding: 20px;
+}
+
+// Responsive Design: Ajustar la tabla y texto para pantallas pequeñas
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 24px; // Tamaño de fuente más pequeño en dispositivos móviles
+  }
+
+  table {
+    width: 100%; // Asegura que la tabla ocupe el 100% del ancho
+    font-size: 14px; // Reduce el tamaño de la fuente para pantallas pequeñas
+  }
+
+  td {
+    padding: 10px; // Ajusta el padding para pantallas pequeñas
+  }
+
+  /* Centra los títulos y las celdas para pantallas pequeñas */
+  td:first-child {
+    display: block;
+    text-align: center;
+  }
+
+  /* Asegura que el texto no se salga de la pantalla */
+  .no-data {
+    font-size: 16px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 20px; // Más pequeño aún en pantallas muy pequeñas
+  }
+
+  table {
+    width: 100%;
+    font-size: 12px; // Ajuste adicional para pantallas muy pequeñas
+  }
+
+  td {
+    padding: 8px; // Menos espacio para pantallas pequeñas
+  }
+}

@@ -1,0 +1,51 @@
+.percentage-bar-container {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.percentage-bar {
+  display: flex;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+  position: relative;
+}
+
+.bar {
+  height: 100%;
+  position: relative;
+}
+
+.team1 {
+  background-color: #4caf50; /* Verde para el equipo 1 */
+  border-radius: 6px 0px 0px 6px;
+}
+
+.draw {
+  background-color: #ffeb3b; /* Amarillo para el empate */
+}
+
+.team2 {
+  background-color: #f44336; /* Rojo para el equipo 2 */
+  border-radius: 0px 6px 6px 0px;
+}
+
+.goles-percentage {
+  position: absolute;
+  top: -28px; /* Mueve los goles hacia arriba */
+  font-size: 0.9em;
+  font-weight: bold;
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+
+
+.goles-draw {
+  display: none;
+}
+
